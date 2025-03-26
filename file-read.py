@@ -1,0 +1,8 @@
+f = open("file-read.txt",encoding="utf-8")
+f.seek(0)
+#print(f.read())
+#print(f.readlines())
+# print(f.readline())
+# print(f.readline())
+# print(f.readline())
+# print(f.readline())
