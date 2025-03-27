@@ -2,7 +2,8 @@
 
 def main():
     account = {
-        "name": "John Doe",
+        # My full name is Ali JAMIL
+        "name": "Ali JAMIL",
         "balance": 1000,
         "additional_account": 500
     }
