@@ -18,5 +18,10 @@
         "titleBar.inactiveBackground": "#900d0999",
         "titleBar.inactiveForeground": "#e7e7e799"
     },
-    "peacock.color": "#900D09"
+    "peacock.color": "#900D09",
+    "cSpell.words": [
+        "JAMIL",
+        "Johny",
+        "Minecrafty"
+    ]
 }
