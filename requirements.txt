@@ -1,0 +1,13 @@
+numpy
+pandas
+matplotlib
+manim
+torch
+torchvision
+torchaudio
+torchtext
+django
+mysql-connector-python
+cachetools
+requests
+beautifulsoup4

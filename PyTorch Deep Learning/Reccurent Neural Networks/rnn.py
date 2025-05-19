@@ -29,8 +29,20 @@ def gen_data(seq_length = 50, num_samples = 1000):
 sequence, targets = gen_data() 
 
 # %% Create RNN Model
+class RNN(nn.Module):
+    def __init__(self, input_size, hidden_size, output_size, num_layers=1):
 
+        super(RNN, self).__init__()
+        self.rnn =nn.RNN(input_size, hidden_size, num_layers, batch_first=True)
+        self.fc = nn.Linear(hidden_size, output_size)
 
+    def forward(self, x):
+        out, _ = self.rnn(x)
+        out = self.fc(out[:,-1,:])
+
+        return out
+
+RNN(1, 16, 1, 1)
 
 # %% Training
 
