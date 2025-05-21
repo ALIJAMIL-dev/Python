@@ -42,11 +42,37 @@ class RNN(nn.Module):
 
         return out
 
-RNN(1, 16, 1, 1)
+model = RNN(1, 16, 1, 1)
 
 # %% Training
+seq_length = 50
+input_size = 1
+hidden_size = 16 
+output_size = 1
+num_layers = 1
+epochs = 20
+batch_size = 32
+learning_rate = 0.001
 
+X, y = gen_data(seq_length)
+X = torch.tensor(X, dtype= torch.float32).unsqueeze(-1)
+y = torch.tensor(y, dtype= torch.float32).unsqueeze(-1)
 
+dataset = torch.utils.data.TensorDataset(X,y)
+dataLoader = torch.utils.data.DataLoader(dataset, batch_size, shuffle=True)
+
+model = RNN(input_size, hidden_size, output_size, num_layers)
+criterion = nn.MSELoss()
+optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
+
+for epoch in range(epochs):
+    for batch_x, batch_y in dataLoader:
+        optimizer.zero_grad()
+        pred_y = model(batch_x)
+        loss = criterion(pred_y, batch_y)
+        loss.backward()
+        optimizer.step()
+    print(f"Epoch: {epoch+1}/{epochs}, Loss: {loss.item():.4f}")
 # %% RNN Test and Evaluation
 
 
