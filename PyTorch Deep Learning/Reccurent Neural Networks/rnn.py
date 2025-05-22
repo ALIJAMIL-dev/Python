@@ -73,6 +73,30 @@ for epoch in range(epochs):
         loss.backward()
         optimizer.step()
     print(f"Epoch: {epoch+1}/{epochs}, Loss: {loss.item():.4f}")
+
 # %% RNN Test and Evaluation
 
+# Creating Datas for Testing
+X_test = np.linspace(100, 110, seq_length).reshape(1,-1)
+y_test = np.sin(X_test)
 
+X_test2 = np.linspace(120, 130, seq_length).reshape(1,-1)
+y_test2 = np.sin(X_test2)
+
+X_test = torch.tensor(y_test, dtype= torch.float32).unsqueeze(-1)
+X_test2 = torch.tensor(y_test2, dtype= torch.float32).unsqueeze(-1)
+
+model.eval()
+prediction1 = model(X_test).detach().numpy()
+prediction2 = model(X_test2).detach().numpy()
+
+plt.figure()
+plt.plot(np.linspace(0, 100, len(y)), y, marker = "o", label = "Training Dataset")
+plt.plot(X_test.numpy().flatten(), marker = "o", label = "Test 1")
+plt.plot(X_test2.numpy().flatten(), marker = "o", label = "Test 2")
+
+plt.plot(np.arange(seq_length, seq_length+1), prediction1.flatten(), "ro", label = "Prediction 1")
+plt.plot(np.arange(seq_length, seq_length+1), prediction2.flatten(), "ro", label = "Prediction 2")
+
+plt.legend()
+plt.show()
