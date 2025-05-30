@@ -32,6 +32,15 @@ i2w = {i: word for i, word in enumerate(vocab)}
 data = [(words[i], words[i+1]) for i in range(len(words)-1)]
 
 # %% Define LSTM Module
+class LSTM(nn.Module):
+    def __init__(self, vocab_size, embedding_data):
+        super(LSTM, self).__init__()
+        # Embedding Layer
+        nn.Embedding(vocab_size, embedding_data)
+
+    def forward():
+        pass   
+
 
 
 # %% Hyperparameter Tuning
