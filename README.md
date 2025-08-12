@@ -1,6 +1,6 @@
-# Python Medium Learning Guide
+# Python Learning Guide
 
-Welcome to the **Python Medium Learning Guide**! This repository is designed to help you enhance your Python skills and transition from beginner to intermediate proficiency.
+Welcome to the **Python Learning Guide**! This repository is designed to help you enhance your Python skills and transition from beginner to intermediate proficiency.
 
 ## Features
 
