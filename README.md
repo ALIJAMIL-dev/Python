@@ -21,7 +21,7 @@ And to use it
     - Pandas
     - Flask
     - Django
-    As AI/ML Frameworks/Libraries
+   - As AI/ML Frameworks/Libraries:
     - PyTorch
     - Tensorflow (Planned)
     - Keras (Planned)
