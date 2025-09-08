@@ -1,55 +1,28 @@
-# Python Learning Guide
+# My Python Repo
+## Hi, This repo is created to contain the whole Python Laerning Code.
+Like you can learn examples and if you can contribute for the Documentation, You're good!
+I maked this README.md as indexing file.
 
-Welcome to the **Python Learning Guide**! This repository is designed to help you enhance your Python skills and transition from beginner to intermediate proficiency.
+# How to Install/Clone this repo
+To clone this repo:
+```bash 
+git clone github.com/ALIJAMIL-dev/Python.git
+```
 
-## Features
+And to use it 
+- Go to Python.org and install Latest Python version available
+- or [Download it Python 3.13.7 from here](https://www.python.org/ftp/python/3.13.7/python-3.13.7-amd64.exe)
 
-- **Intermediate Concepts**: Dive deeper into Python with topics like object-oriented programming, error handling, and more.
-- **Practical Examples**: Learn through real-world examples and hands-on exercises.
-- **Clean Code Practices**: Improve your coding style with tips and best practices.
-- **Project Ideas**: Build projects to solidify your understanding.
-
-## Prerequisites
-
-- Basic knowledge of Python (variables, loops, functions, etc.).
-- Python 3.x installed on your system. [Download Python](https://www.python.org/downloads/)
-
-## Getting Started
-
-1. Clone this repository:
-    ```bash
-    git clone https://github.com/ALIJAMIL-dev/Python.git
-    cd Python
-    ```
-
-2. Install required dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-3. Start exploring the topics and examples in the `lessons/` directory.
-
-## Topics Covered
-
-- Advanced Data Structures
-- Object-Oriented Programming (OOP)
-- File Handling
-- Error and Exception Handling
-- Modules and Packages
-- Introduction to Testing
-- Working with APIs
-- Basic Algorithms
-
-## Contributing
-
-Contributions are welcome! Feel free to submit issues or pull requests to improve this guide.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
----
-
-# The End
-
-Happy Learning! 🚀
+# We have these things in this Repo:
+- Python Core Language
+- Libraries/Frameworks
+    - Numpy
+    - Matplotlib
+    - Pandas
+    - Flask
+    - Django
+   - As AI/ML Frameworks/Libraries:
+    - PyTorch
+    - Tensorflow (Planned)
+    - Keras (Planned)
+    - Scikit-learn
