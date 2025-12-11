@@ -6,9 +6,11 @@ torch
 torchvision
 torchaudio
 torchtext
+tensorflow
 django
 mysql-connector-python
 cachetools
 requests
 beautifulsoup4
 pytest
+kivy
