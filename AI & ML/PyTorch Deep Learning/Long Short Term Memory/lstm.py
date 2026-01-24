@@ -108,10 +108,45 @@ for emb_size, hidden_size, lr in product(embedding_sizes, hidden_sizes, learning
 print(f"Best params: {best_params}")
 
 # %% LSTM Training
+final_model = LSTM(len(vocab), best_params['embedding_dim'], best_params["hidden_dim"])
+optimizer = optim.Adam(final_model.parameters(), lr = best_params["learning_rate"])
+loss_function = nn.CrossEntropyLoss() 
 
+print("Final model training")
 
+epochs = 100
+for epoch in range(epochs):
+    epoch_loss = 0
+    for word, next_word in data:
+        final_model.zero_grad() 
+        input_tensor = prepare_sequence([word], w2i) 
+        target_tensor = prepare_sequence([next_word], w2i) 
+        output = final_model(input_tensor) 
+        loss = loss_function(output, target_tensor) 
+        loss.backward() 
+        optimizer.step() 
+        epoch_loss += loss.item()
+    if epoch % 10 == 0:
+        print(f"\nFinal Model Epoch: {epoch}, Loss: {epoch_loss:.5f}")  
 
 # %% Test and Evaluation
 
+# Word Prediction Function: Generate the starting word and n words
+def predict_sequence(start_word, num_words):
+    current_word = start_word # The current word is set as the start word
+    output_sequence = [current_word] # Output Series
+    
+    for _ in range(num_words): # Specified number of Word Predictions
+        with torch.no_grad(): # With No Grad Calculation
+            input_tensor = prepare_sequence([current_word], w2i) # Word -> Tensor
+            output = final_model(input_tensor)
+            predicted_idx = torch.argmax(output).item() # Index of the word with the highest probability
+            predicted_word = i2w[predicted_idx] # Returns the word corresponding to index
+            output_sequence.append(predicted_word) 
+            current_word = predicted_word # Update available words for next prediction
+    return output_sequence
 
-
+start_word = "product"
+num_predictions = 1
+predicted_sequence = predict_sequence(start_word, num_predictions)
+print(" ".join(predicted_sequence))
